@@ -10,8 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ReviewRepository {
 
-	// TODO add date field
-
 	Map<Long, Review> reviewList = new HashMap<>();
 
 	public ReviewRepository() {
