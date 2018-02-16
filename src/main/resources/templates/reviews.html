@@ -2,12 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Haiku Reviews</title>
+	<style>
+	img {
+		display: block;
+		max-width: 500px;
+		max-height: 300px;
+		width: auto;
+		height: auto;
+	}
+</style>
 </head>
 
 <body>
 	<h1>Haiku Reviews</h1>
 	
-	<h3>An assortment of things, reviewed via haiku. For those who like brevity.</h3>
+	<h3>An assortment of video games, reviewed via haiku. For those who like brevity.</h3>
 	
 	<h2>Review Listing</h2>
 
@@ -17,5 +26,7 @@
 			<span th:text="| - ${element.description}|"></span>
 		</li>
 	</ul>
+	
+	<img src="./images/wallshroom.jpg" title="Graffiti shroom" alt="Graffiti shroom" />
 </body>
 </html>
