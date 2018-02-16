@@ -4,29 +4,33 @@ import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 public class Review {
 
 	private long id;
 	private String title;
+	private Date reviewDate;
 	private int yearPublished;
 	private String category;
 	private String description;
 	private String imageUrl;
 	private Collection<String> content;
-	private ArrayList<String> tags;
+	private Collection<String> tags = new ArrayList<>();
 
-	// TODO add tags implementation
-
-	public Review(long id, String title, int yearPublished, String category, String description, String imageUrl, String haikuFirstLine, String haikuSecondLine,
-			String haikuThirdLine) {
+	public Review(long id, String title, Date reviewDate, int yearPublished, String category, String description, String imageUrl, String haikuFirstLine, String haikuSecondLine,
+			String haikuThirdLine, String... tagInput) {
 		this.id = id;
 		this.title = title;
+		this.reviewDate = reviewDate;
 		this.yearPublished = yearPublished;
 		this.category = category;
 		this.description = description;
 		this.imageUrl = imageUrl;
 		this.content = new ArrayList<String>(asList(haikuFirstLine, haikuSecondLine, haikuThirdLine));
+		for (String current : tagInput) {
+			this.tags.add(current);
+		}
 	}
 
 	public long getId() {
@@ -39,6 +43,10 @@ public class Review {
 
 	public String getTitle() {
 		return title;
+	}
+
+	public Date getReviewDate() {
+		return reviewDate;
 	}
 
 	public String getDescription() {
@@ -57,7 +65,7 @@ public class Review {
 		return content;
 	}
 
-	public ArrayList<String> getTags() {
+	public Collection<String> getTags() {
 		return tags;
 	}
 

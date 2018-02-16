@@ -5,15 +5,16 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.junit.Test;
 
 public class ReviewRepositoryTest {
 
 	ReviewRepository underTest = new ReviewRepository();
-	Review firstReview = new Review(00001L, "first", 2018, "category", "description", "imageUrl", "content", "content", "content");
-	Review secondReview = new Review(00002L, "second", 2018, "category", "description", "imageUrl", "content", "content", "content");
-	Review thirdReview = new Review(00003L, "third", 2018, "category", "description", "imageUrl", "content", "content", "content");
+	Review firstReview = new Review(00001L, "first", new Date(), 2018, "category", "description", "imageUrl", "content", "content", "content");
+	Review secondReview = new Review(00002L, "second", new Date(), 2018, "category", "description", "imageUrl", "content", "content", "content");
+	Review thirdReview = new Review(00003L, "third", new Date(), 2018, "category", "description", "imageUrl", "content", "content", "content");
 
 	@Test
 	public void shouldFindFirstReviewByID() {

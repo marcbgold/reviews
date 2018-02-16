@@ -15,10 +15,13 @@
 </head>
 
 <body>
+	<p th:text="|Review Date: ${#dates.format(currentReview.reviewDate, 'MM-dd-yyyy')}|" />
 	<h2 th:text="|${currentReview.title}|" />
 	<p th:text="|Year Published: ${currentReview.yearPublished}|" />
 	<p th:text="|Category: ${currentReview.category}|" />
+	<span>Tags:</span><span th:each="element: ${currentReview.tags}" th:text="| ${element} /|"></span>
 
+	<p/>
 	<img th:src="${currentReview.imageUrl}"	th:title="${currentReview.title}" th:alt="${currentReview.title}" />
 
 	<h3>Haiku</h3>
