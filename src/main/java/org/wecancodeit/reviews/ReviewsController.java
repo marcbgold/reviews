@@ -14,13 +14,13 @@ public class ReviewsController {
 	ReviewRepository repository;
 
 	@RequestMapping("/review")
-	public String showreview(@RequestParam(value = "reviewId", required = true) Long id, Model model) {
+	public String showReview(@RequestParam(value = "reviewId", required = true) Long id, Model model) {
 		model.addAttribute("currentReview", repository.getReviewByID(id));
 		return "review";
 	}
 
 	@RequestMapping("/review-listing")
-	public String showAllreviews(Model model) {
+	public String showAllReviews(Model model) {
 		model.addAttribute("reviewListing", repository.getAllReviews());
 		return "reviews";
 
